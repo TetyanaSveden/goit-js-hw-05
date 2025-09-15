@@ -1,48 +1,79 @@
-const getTotalBalanceByGender = (users, gender) => 
-  users
-    .filter(user => user.gender === gender)
-    .map(user => user.balance)
-    .reduce((total, balance) => total + balance, 0);
+const sortByDescendingFriendCount = users => users.toSorted((a, b) => b.friends.lenght - a.friends.lenght);
 
 
-const clients = [
-	{
-    name: "Moore Hensley",
-    gender: "male",
-    balance: 2811
+console.log(
+  sortByDescendingFriendCount([
+    {
+      name: "Moore Hensley",
+      friends: ["Sharron Pace"],
+      gender: "male"
+    },
+    {
+      name: "Sharlene Bush",
+      friends: ["Briana Decker", "Sharron Pace"],
+      gender: "female"
+    },
+    {
+      name: "Ross Vazquez",
+      friends: ["Marilyn Mcintosh", "Padilla Garrison", "Naomi Buckner"],
+      gender: "male"
+    },
+    {
+      name: "Elma Head",
+      friends: ["Goldie Gentry", "Aisha Tran"],
+      gender: "female"
+    },
+    {
+      name: "Carey Barr",
+      friends: ["Jordan Sampson", "Eddie Strong"],
+      gender: "male"
+    },
+    {
+      name: "Blackburn Dotson",
+      friends: ["Jacklyn Lucas", "Linda Chapman"],
+      gender: "male"
+    },
+    {
+      name: "Sheree Anthony",
+      friends: ["Goldie Gentry", "Briana Decker"],
+      gender: "female"
+    }
+  ])
+);
+[
+  {
+    name: "Ross Vazquez",
+    friends: ["Marilyn Mcintosh", "Padilla Garrison", "Naomi Buckner"],
+    gender: "male"
   },
   {
     name: "Sharlene Bush",
-    gender: "female",
-    balance: 3821
-  },
-  {
-    name: "Ross Vazquez",
-    gender: "male",
-    balance: 3793
+    friends: ["Briana Decker", "Sharron Pace"],
+    gender: "female"
   },
   {
     name: "Elma Head",
-    gender: "female",
-    balance: 2278
+    friends: ["Goldie Gentry", "Aisha Tran"],
+    gender: "female"
   },
   {
     name: "Carey Barr",
-    gender: "male",
-    balance: 3951
+    friends: ["Jordan Sampson", "Eddie Strong"],
+    gender: "male"
   },
   {
     name: "Blackburn Dotson",
-    gender: "male",
-    balance: 1498
+    friends: ["Jacklyn Lucas", "Linda Chapman"],
+    gender: "male"
   },
   {
     name: "Sheree Anthony",
-    gender: "female",
-    balance: 2764
+    friends: ["Goldie Gentry", "Briana Decker"],
+    gender: "female"
+  },
+  {
+    name: "Moore Hensley",
+    friends: ["Sharron Pace"],
+    gender: "male"
   }
-];
-
-console.log(getTotalBalanceByGender(clients, "male")); // 12053
-
-console.log(getTotalBalanceByGender(clients, "female")); // 8863
+]
